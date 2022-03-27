@@ -10,9 +10,9 @@ app.get('/', (req, res) => {
 
 app.get('/search/:query', async (req, res) => {
   const { query } = req.params;
-  const urls = await redbubble.search(query);
+  const data = await redbubble.search(query);
   
-  res.send(urls.map(url => `<img src = "${url}" />`).join(''));
+  res.send(data);
 });
 
 app.listen(port, () => {
