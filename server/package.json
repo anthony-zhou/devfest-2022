@@ -6,7 +6,7 @@
   "scripts": {
     "main": "tsc && node dist/index.js",
     "dev": "nodemon src/index.ts",
-    "start": "yarn main"
+    "start": "tsc && node dist/index.js"
   },
   "devDependencies": {
     "@types/express": "^4.17.13",
