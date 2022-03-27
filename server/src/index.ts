@@ -16,5 +16,5 @@ app.get('/search/:query', async (req, res) => {
 });
 
 app.listen(port, () => {
-  console.log(`Example app listening on port ${port}`);
+  console.log(`Redbubble API listening on port ${port}`);
 });

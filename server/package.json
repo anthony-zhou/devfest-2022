@@ -5,7 +5,8 @@
   "private": true,
   "scripts": {
     "main": "tsc && node dist/index.js",
-    "dev": "nodemon src/index.ts"
+    "dev": "nodemon src/index.ts",
+    "start": "yarn main"
   },
   "devDependencies": {
     "@types/express": "^4.17.13",
