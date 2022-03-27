@@ -74,4 +74,9 @@ public class SpawnableManager : MonoBehaviour
     private void SpawnPrefab(Vector3 spawnPosition, Quaternion spawnRotation) {
         spawnedObject = Instantiate(spawnablePrefab, spawnPosition, spawnRotation);
     }
+    public void selectPoster(GameObject newObjectToSpawn)
+    {
+        //slideDown
+        spawnablePrefab = newObjectToSpawn;
+    }
 }
