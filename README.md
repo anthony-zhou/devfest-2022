@@ -1,1 +1,4 @@
-# devfest-2021
+# WALLrus
+
+Decorate your room in AR.
+
