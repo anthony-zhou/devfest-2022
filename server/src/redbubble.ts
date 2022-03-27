@@ -15,7 +15,7 @@ export async function search(query: string, limit: number = 10) {
       .fill(0)
       .map((_, i) => document.querySelector(`#SearchResultsGrid > a:nth-child(${i + 1})`) as HTMLLinkElement)
       .map((e) => ({
-        thumbnail: e.querySelector('img')?.src,
+        thumbnail: (e.querySelector('img.styles__productImage--3ZNPD') as HTMLImageElement)?.src,
         itemUrl: e.href,
         title: e.querySelector('div > div.styles__box--2Ufmy.styles__display-flex--2Ww2j > div > div.styles__box--2Ufmy.styles__disableLineHeight--6s16u.styles__paddingRight-0--1YNvL > span')?.textContent,
         creator: e.querySelector('div > div.styles__box--2Ufmy.styles__display-flex--2Ww2j > div > div.styles__box--2Ufmy.styles__disableLineHeight--6s16u.styles__paddingRight-0--1YNvL > div > span')?.textContent,
