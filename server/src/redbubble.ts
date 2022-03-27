@@ -24,3 +24,22 @@ export async function search(query: string, limit: number = 10) {
 
   return data;
 }
+
+export async function loadPosterImageUrl(url: string) {
+  const browser = await puppeteer.launch({
+    'args' : [
+      '--no-sandbox',
+      '--disable-setuid-sandbox',
+    ],
+  });
+  const page = await browser.newPage();
+
+  await page.goto(url);
+  await page.waitForSelector('#app > div > div.ds-theme-find-your-thing.App__dsWrapper--RyVET > main > div > div > div:nth-child(2) > div > div.DesktopProductPage__primaryContent--2GiWp > div.DesktopProductPage__left--1anl7 > div:nth-child(1) > div.PreviewGallery__gallery--1mxHG.DesktopProductPage__gallery--36AFk > div.PreviewGallery__leftColumn--1ut9H > div:nth-child(2) > div > div.PreviewGallery__preview--bWOCE.GalleryImage__preview--Hx82M > img');
+  const data = await page.evaluate(() => {
+    const image = document.querySelectorAll('img.GalleryImage__img--12Vov')[1] as HTMLImageElement;
+    return image.src;
+  });
+
+  return data;
+}
