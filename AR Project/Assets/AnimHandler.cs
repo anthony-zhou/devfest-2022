@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class AnimHandler : MonoBehaviour
 {
-    private bool isOpen = false;
+    private bool isOpen = true;
     private Animation anim;
     private void Start()
     {

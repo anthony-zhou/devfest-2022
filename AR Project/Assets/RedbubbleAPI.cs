@@ -18,24 +18,9 @@ public class RedbubbleResponse {
     public List<RedbubbleResult> results;
 }
 
-public class RedbubbleAPI : MonoBehaviour
+public class RedbubbleAPI
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        print("INITIALIZING REDBUBBLE");
-        RedbubbleResponse res = SearchRedbubble("cat");
-        print(res);
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
-    private RedbubbleResponse SearchRedbubble(String query) {
-        print(String.Format("https://redbubble-api.herokuapp.com/search/{0}", query));
+    public static RedbubbleResponse SearchRedbubble(String query) {
         HttpWebRequest request = (HttpWebRequest)WebRequest.Create(String.Format("https://redbubble-api.herokuapp.com/search/{0}", query));
         HttpWebResponse response = (HttpWebResponse)request.GetResponse();
         StreamReader reader = new StreamReader(response.GetResponseStream());

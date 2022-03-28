@@ -58,7 +58,7 @@ public class SpawnableManager : MonoBehaviour
         Vector3 pos = Vector3.zero;
         Quaternion rotation = Quaternion.identity;
         foreach (ARRaycastHit hit in m_Hits) {
-            if (hit.distance > 1.0f) {
+            if (hit.distance > 0.5f) {
                 Vector3 normal = - hit.pose.up;
                 Quaternion r = Quaternion.LookRotation(normal, Vector3.up);
                 if (r.y != 0) {
